@@ -1,4 +1,4 @@
-use actix_web::{ HttpServer, App };
+use actix_web::{HttpServer, App};
 use ime_api::lib::get_all_questions;
 
 #[actix_web::main]

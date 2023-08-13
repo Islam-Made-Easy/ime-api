@@ -6,8 +6,8 @@ pub mod lib {
     use std::fs::File;
     use std::io::Read;
     use serde_json::Value;
-    use serde::{ Deserialize, Serialize };
-    use actix_web::{ get, HttpResponse, Result };
+    use serde::{Deserialize, Serialize};
+    use actix_web::{get, HttpResponse, Result};
 
     #[derive(Debug, Serialize, Deserialize)]
     pub struct QueryParams {
