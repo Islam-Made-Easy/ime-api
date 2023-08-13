@@ -52,7 +52,6 @@ pub mod lib {
     }
 }
 
-// pub use lib::get_questions_by_category;
 pub use lib::get_all_questions;
 pub use lib::read_quiz_data;
 pub use lib::QueryParams;
