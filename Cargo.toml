@@ -1,0 +1,19 @@
+[package]
+name = "ime-api"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "4.3.0"
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1", features = ["full"] }
+serde_json = "1.0"
+env_logger = "0.10.0"
+prometheus = "0.13.3"
+ratelimit_meter = "5.0.0"
+reqwest = "0.11"
+
+[dev-dependencies]
+tokio-test = "0.4"
