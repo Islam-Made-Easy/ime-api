@@ -1,0 +1,542 @@
+{
+  "categories": {
+    "Worship": {
+      "Tawheed and Shirk": [
+        {
+          "id": 1,
+          "question": "What is the greatest worship?",
+          "question_type": "multiple-choice",
+          "answers": ["the prayer", "Zakat", "unification. -- Tawheed"],
+          "correct_answer": "unification. -- Tawheed"
+        },
+        {
+          "id": 2,
+          "question": "What is the ruling on turning away from the religion of Allah, the Almighty, in knowledge and practice?",
+          "question_type": "fill-in-the-blanks",
+          "answers": [
+            "ignorant",
+            "K.F.R because he committed a nullifier of Islam",
+            "a stubborn hypocrite"
+          ],
+          "correct_answer": "K.F.R because he committed a nullifier of Islam"
+        }
+      ],
+      "Names of Allah": [
+        {
+          "id": 11,
+          "question": "Fasting is one of the pillars",
+          "question_type": "fill-in-the-blanks",
+          "answers": ["Islam", "Faith", "charity", "Taqwah"],
+          "correct_answer": "charity"
+        },
+        {
+          "id": 12,
+          "question": "ما هي الارض المباركة",
+          "question_type": "multiple-choice",
+          "answers": ["الشام", "افريقيا", "اوروبا"],
+          "correct_answer": "الشام"
+        }
+      ]
+    },
+    "Warship": {
+      "Tawheed and Shirk": [
+        {
+          "id": 1,
+          "question": "What is the greatest worship?",
+          "question_type": "multiple-choice",
+          "answers": ["the prayer", "Zakat", "unification. -- Tawheed"],
+          "correct_answer": "unification. -- Tawheed"
+        },
+        {
+          "id": 2,
+          "question": "What is the ruling on turning away from the religion of Allah, the Almighty, in knowledge and practice?",
+          "question_type": "fill-in-the-blanks",
+          "answers": [
+            "ignorant",
+            "K.F.R because he committed a nullifier of Islam",
+            "a stubborn hypocrite"
+          ],
+          "correct_answer": "K.F.R because he committed a nullifier of Islam"
+        }
+      ],
+      "Names of Allah": [
+        {
+          "id": 11,
+          "question": "Fasting is one of the pillars",
+          "question_type": "fill-in-the-blanks",
+          "answers": ["Islam", "Faith", "charity", "Taqwah"],
+          "correct_answer": "charity"
+        },
+        {
+          "id": 12,
+          "question": "ما هي الارض المباركة",
+          "question_type": "multiple-choice",
+          "answers": ["الشام", "افريقيا", "اوروبا"],
+          "correct_answer": "الشام"
+        }
+      ]
+    },
+    "Worshipm": {
+      "Tawheed and Shirk": [
+        {
+          "id": 1,
+          "question": "What is the greatest worship?",
+          "question_type": "multiple-choice",
+          "answers": ["the prayer", "Zakat", "unification. -- Tawheed"],
+          "correct_answer": "unification. -- Tawheed"
+        },
+        {
+          "id": 2,
+          "question": "What is the ruling on turning away from the religion of Allah, the Almighty, in knowledge and practice?",
+          "question_type": "fill-in-the-blanks",
+          "answers": [
+            "ignorant",
+            "K.F.R because he committed a nullifier of Islam",
+            "a stubborn hypocrite"
+          ],
+          "correct_answer": "K.F.R because he committed a nullifier of Islam"
+        }
+      ],
+      "Names of Allah": [
+        {
+          "id": 11,
+          "question": "Fasting is one of the pillars",
+          "question_type": "fill-in-the-blanks",
+          "answers": ["Islam", "Faith", "charity", "Taqwah"],
+          "correct_answer": "charity"
+        },
+        {
+          "id": 12,
+          "question": "ما هي الارض المباركة",
+          "question_type": "multiple-choice",
+          "answers": ["الشام", "افريقيا", "اوروبا"],
+          "correct_answer": "الشام"
+        }
+      ]
+    },
+    "Worshipqs": {
+      "Tawheed and Shirk": [
+        {
+          "id": 1,
+          "question": "What is the greatest worship?",
+          "question_type": "multiple-choice",
+          "answers": ["the prayer", "Zakat", "unification. -- Tawheed"],
+          "correct_answer": "unification. -- Tawheed"
+        },
+        {
+          "id": 2,
+          "question": "What is the ruling on turning away from the religion of Allah, the Almighty, in knowledge and practice?",
+          "question_type": "fill-in-the-blanks",
+          "answers": [
+            "ignorant",
+            "K.F.R because he committed a nullifier of Islam",
+            "a stubborn hypocrite"
+          ],
+          "correct_answer": "K.F.R because he committed a nullifier of Islam"
+        }
+      ],
+      "Names of Allah": [
+        {
+          "id": 11,
+          "question": "Fasting is one of the pillars",
+          "question_type": "fill-in-the-blanks",
+          "answers": ["Islam", "Faith", "charity", "Taqwah"],
+          "correct_answer": "charity"
+        },
+        {
+          "id": 12,
+          "question": "ما هي الارض المباركة",
+          "question_type": "multiple-choice",
+          "answers": ["الشام", "افريقيا", "اوروبا"],
+          "correct_answer": "الشام"
+        }
+      ]
+    },
+    "Worshipw": {
+      "Tawheed and Shirk": [
+        {
+          "id": 1,
+          "question": "What is the greatest worship?",
+          "question_type": "multiple-choice",
+          "answers": ["the prayer", "Zakat", "unification. -- Tawheed"],
+          "correct_answer": "unification. -- Tawheed"
+        },
+        {
+          "id": 2,
+          "question": "What is the ruling on turning away from the religion of Allah, the Almighty, in knowledge and practice?",
+          "question_type": "fill-in-the-blanks",
+          "answers": [
+            "ignorant",
+            "K.F.R because he committed a nullifier of Islam",
+            "a stubborn hypocrite"
+          ],
+          "correct_answer": "K.F.R because he committed a nullifier of Islam"
+        }
+      ],
+      "Names of Allah": [
+        {
+          "id": 11,
+          "question": "Fasting is one of the pillars",
+          "question_type": "fill-in-the-blanks",
+          "answers": ["Islam", "Faith", "charity", "Taqwah"],
+          "correct_answer": "charity"
+        },
+        {
+          "id": 12,
+          "question": "ما هي الارض المباركة",
+          "question_type": "multiple-choice",
+          "answers": ["الشام", "افريقيا", "اوروبا"],
+          "correct_answer": "الشام"
+        }
+      ]
+    },
+    "Worshipwqv": {
+      "Tawheed and Shirk": [
+        {
+          "id": 1,
+          "question": "What is the greatest worship?",
+          "question_type": "multiple-choice",
+          "answers": ["the prayer", "Zakat", "unification. -- Tawheed"],
+          "correct_answer": "unification. -- Tawheed"
+        },
+        {
+          "id": 2,
+          "question": "What is the ruling on turning away from the religion of Allah, the Almighty, in knowledge and practice?",
+          "question_type": "fill-in-the-blanks",
+          "answers": [
+            "ignorant",
+            "K.F.R because he committed a nullifier of Islam",
+            "a stubborn hypocrite"
+          ],
+          "correct_answer": "K.F.R because he committed a nullifier of Islam"
+        }
+      ],
+      "Names of Allah": [
+        {
+          "id": 11,
+          "question": "Fasting is one of the pillars",
+          "question_type": "fill-in-the-blanks",
+          "answers": ["Islam", "Faith", "charity", "Taqwah"],
+          "correct_answer": "charity"
+        },
+        {
+          "id": 12,
+          "question": "ما هي الارض المباركة",
+          "question_type": "multiple-choice",
+          "answers": ["الشام", "افريقيا", "اوروبا"],
+          "correct_answer": "الشام"
+        }
+      ]
+    },
+    "Worships": {
+      "Tawheed and Shirk": [
+        {
+          "id": 1,
+          "question": "What is the greatest worship?",
+          "question_type": "multiple-choice",
+          "answers": ["the prayer", "Zakat", "unification. -- Tawheed"],
+          "correct_answer": "unification. -- Tawheed"
+        },
+        {
+          "id": 2,
+          "question": "What is the ruling on turning away from the religion of Allah, the Almighty, in knowledge and practice?",
+          "question_type": "fill-in-the-blanks",
+          "answers": [
+            "ignorant",
+            "K.F.R because he committed a nullifier of Islam",
+            "a stubborn hypocrite"
+          ],
+          "correct_answer": "K.F.R because he committed a nullifier of Islam"
+        }
+      ],
+      "Names of Allah": [
+        {
+          "id": 11,
+          "question": "Fasting is one of the pillars",
+          "question_type": "fill-in-the-blanks",
+          "answers": ["Islam", "Faith", "charity", "Taqwah"],
+          "correct_answer": "charity"
+        },
+        {
+          "id": 12,
+          "question": "ما هي الارض المباركة",
+          "question_type": "multiple-choice",
+          "answers": ["الشام", "افريقيا", "اوروبا"],
+          "correct_answer": "الشام"
+        }
+      ]
+    },
+    "Worshipq": {
+      "Tawheed and Shirk": [
+        {
+          "id": 1,
+          "question": "What is the greatest worship?",
+          "question_type": "multiple-choice",
+          "answers": ["the prayer", "Zakat", "unification. -- Tawheed"],
+          "correct_answer": "unification. -- Tawheed"
+        },
+        {
+          "id": 2,
+          "question": "What is the ruling on turning away from the religion of Allah, the Almighty, in knowledge and practice?",
+          "question_type": "fill-in-the-blanks",
+          "answers": [
+            "ignorant",
+            "K.F.R because he committed a nullifier of Islam",
+            "a stubborn hypocrite"
+          ],
+          "correct_answer": "K.F.R because he committed a nullifier of Islam"
+        }
+      ],
+      "Names of Allah": [
+        {
+          "id": 11,
+          "question": "Fasting is one of the pillars",
+          "question_type": "fill-in-the-blanks",
+          "answers": ["Islam", "Faith", "charity", "Taqwah"],
+          "correct_answer": "charity"
+        },
+        {
+          "id": 12,
+          "question": "ما هي الارض المباركة",
+          "question_type": "multiple-choice",
+          "answers": ["الشام", "افريقيا", "اوروبا"],
+          "correct_answer": "الشام"
+        }
+      ]
+    },
+    "Worshipwq": {
+      "Tawheed and Shirk": [
+        {
+          "id": 1,
+          "question": "What is the greatest worship?",
+          "question_type": "multiple-choice",
+          "answers": ["the prayer", "Zakat", "unification. -- Tawheed"],
+          "correct_answer": "unification. -- Tawheed"
+        },
+        {
+          "id": 2,
+          "question": "What is the ruling on turning away from the religion of Allah, the Almighty, in knowledge and practice?",
+          "question_type": "fill-in-the-blanks",
+          "answers": [
+            "ignorant",
+            "K.F.R because he committed a nullifier of Islam",
+            "a stubborn hypocrite"
+          ],
+          "correct_answer": "K.F.R because he committed a nullifier of Islam"
+        }
+      ],
+      "Names of Allah": [
+        {
+          "id": 11,
+          "question": "Fasting is one of the pillars",
+          "question_type": "fill-in-the-blanks",
+          "answers": ["Islam", "Faith", "charity", "Taqwah"],
+          "correct_answer": "charity"
+        },
+        {
+          "id": 12,
+          "question": "ما هي الارض المباركة",
+          "question_type": "multiple-choice",
+          "answers": ["الشام", "افريقيا", "اوروبا"],
+          "correct_answer": "الشام"
+        }
+      ]
+    },
+    "The Qur'an": {
+      "Prophets & Messengers": [
+        {
+          "id": 21,
+          "question": "Who is the prophet who is mentioned the most in the Qur'an?",
+          "question_type": "fill-in-the-blanks",
+          "answers": [
+            "Jesus, peace be upon him",
+            "Abraham, peace be upon him",
+            "Moses, peace be upon him",
+            "Muhammad, peace and blessings be upon him"
+          ],
+          "correct_answer": "Moses, peace be upon him"
+        },
+        {
+          "id": 22,
+          "question": "What is the name of the surah that you read equals one-third of the Qur’an?",
+          "question_type": "fill-in-the-blanks",
+          "answers": [
+            "the dam",
+            "sincerity",
+            "the unbelievers",
+            "the earthquake"
+          ],
+          "correct_answer": "sincerity"
+        }
+      ],
+      "Books of Allah": [
+        {
+          "id": 31,
+          "question": "What is the surah in which the basmalah was mentioned twice?",
+          "question_type": "multiple-choice",
+          "answers": [
+            "Surah Al-Mulk",
+            "Surah Maryam",
+            "Surat Al-Naml",
+            "Surat Al-Shuara"
+          ],
+          "correct_answer": "Surat Al-Naml"
+        },
+        {
+          "id": 32,
+          "question": "In which surah is the story of Taloot and Goliath mentioned?",
+          "question_type": "multiple-choice",
+          "answers": ["the norms", "the table", "the cow", "poets"],
+          "correct_answer": "Surat Al-Naml"
+        }
+      ]
+    },
+    "The Qur'anz": {
+      "Prophets & Messengers": [
+        {
+          "id": 21,
+          "question": "Who is the prophet who is mentioned the most in the Qur'an?",
+          "question_type": "fill-in-the-blanks",
+          "answers": [
+            "Jesus, peace be upon him",
+            "Abraham, peace be upon him",
+            "Moses, peace be upon him",
+            "Muhammad, peace and blessings be upon him"
+          ],
+          "correct_answer": "Moses, peace be upon him"
+        },
+        {
+          "id": 22,
+          "question": "What is the name of the surah that you read equals one-third of the Qur’an?",
+          "question_type": "fill-in-the-blanks",
+          "answers": [
+            "the dam",
+            "sincerity",
+            "the unbelievers",
+            "the earthquake"
+          ],
+          "correct_answer": "sincerity"
+        }
+      ],
+      "Books of Allah": [
+        {
+          "id": 31,
+          "question": "What is the surah in which the basmalah was mentioned twice?",
+          "question_type": "multiple-choice",
+          "answers": [
+            "Surah Al-Mulk",
+            "Surah Maryam",
+            "Surat Al-Naml",
+            "Surat Al-Shuara"
+          ],
+          "correct_answer": "Surat Al-Naml"
+        },
+        {
+          "id": 32,
+          "question": "In which surah is the story of Taloot and Goliath mentioned?",
+          "question_type": "multiple-choice",
+          "answers": ["the norms", "the table", "the cow", "poets"],
+          "correct_answer": "Surat Al-Naml"
+        }
+      ]
+    },
+    "The Qur'ans": {
+      "Prophets & Messengers": [
+        {
+          "id": 21,
+          "question": "Who is the prophet who is mentioned the most in the Qur'an?",
+          "question_type": "fill-in-the-blanks",
+          "answers": [
+            "Jesus, peace be upon him",
+            "Abraham, peace be upon him",
+            "Moses, peace be upon him",
+            "Muhammad, peace and blessings be upon him"
+          ],
+          "correct_answer": "Moses, peace be upon him"
+        },
+        {
+          "id": 22,
+          "question": "What is the name of the surah that you read equals one-third of the Qur’an?",
+          "question_type": "fill-in-the-blanks",
+          "answers": [
+            "the dam",
+            "sincerity",
+            "the unbelievers",
+            "the earthquake"
+          ],
+          "correct_answer": "sincerity"
+        }
+      ],
+      "Books of Allah": [
+        {
+          "id": 31,
+          "question": "What is the surah in which the basmalah was mentioned twice?",
+          "question_type": "multiple-choice",
+          "answers": [
+            "Surah Al-Mulk",
+            "Surah Maryam",
+            "Surat Al-Naml",
+            "Surat Al-Shuara"
+          ],
+          "correct_answer": "Surat Al-Naml"
+        },
+        {
+          "id": 32,
+          "question": "In which surah is the story of Taloot and Goliath mentioned?",
+          "question_type": "multiple-choice",
+          "answers": ["the norms", "the table", "the cow", "poets"],
+          "correct_answer": "Surat Al-Naml"
+        }
+      ]
+    },
+    "The Qur'anx": {
+      "Prophets & Messengers": [
+        {
+          "id": 21,
+          "question": "Who is the prophet who is mentioned the most in the Qur'an?",
+          "question_type": "fill-in-the-blanks",
+          "answers": [
+            "Jesus, peace be upon him",
+            "Abraham, peace be upon him",
+            "Moses, peace be upon him",
+            "Muhammad, peace and blessings be upon him"
+          ],
+          "correct_answer": "Moses, peace be upon him"
+        },
+        {
+          "id": 22,
+          "question": "What is the name of the surah that you read equals one-third of the Qur’an?",
+          "question_type": "fill-in-the-blanks",
+          "answers": [
+            "the dam",
+            "sincerity",
+            "the unbelievers",
+            "the earthquake"
+          ],
+          "correct_answer": "sincerity"
+        }
+      ],
+      "Books of Allah": [
+        {
+          "id": 31,
+          "question": "What is the surah in which the basmalah was mentioned twice?",
+          "question_type": "multiple-choice",
+          "answers": [
+            "Surah Al-Mulk",
+            "Surah Maryam",
+            "Surat Al-Naml",
+            "Surat Al-Shuara"
+          ],
+          "correct_answer": "Surat Al-Naml"
+        },
+        {
+          "id": 32,
+          "question": "In which surah is the story of Taloot and Goliath mentioned?",
+          "question_type": "multiple-choice",
+          "answers": ["the norms", "the table", "the cow", "poets"],
+          "correct_answer": "Surat Al-Naml"
+        }
+      ]
+    }
+  }
+}
