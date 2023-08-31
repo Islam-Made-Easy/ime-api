@@ -11,9 +11,18 @@ serde = { version = "1.0", features = ["derive"] }
 tokio = { version = "1", features = ["full"] }
 serde_json = "1.0"
 env_logger = "0.10.0"
+log = "0.4"
 prometheus = "0.13.3"
 ratelimit_meter = "5.0.0"
+actix-service = "2.0.0"
 reqwest = "0.11"
+chrono = "0.4.26"
+futures = "0.3"
+actix-rt = "2"
+r2d2 = "0.8"
+r2d2_redis = "0.14.0"
+redis = "0.23.2"
+rand = "0.8"
 
 [dev-dependencies]
 tokio-test = "0.4"
