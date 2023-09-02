@@ -16,3 +16,9 @@ pub struct QuizQuestion {
     pub answers: Vec<String>,
     pub correct_answer: String,
 }
+
+#[derive(Debug, serde::Deserialize)]
+pub struct PathParams {
+    pub category: String,
+    pub subcategory: String,
+}
