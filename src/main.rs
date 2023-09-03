@@ -1,12 +1,15 @@
 use actix_web::{ HttpServer, App, middleware::Logger };
 use env_logger::Builder;
-use log::{ LevelFilter, info, error };
-use crate::routes::{
-    get_all_questions,
-    get_random_questions,
-    get_questions_by_type,
-    get_filtered_questions,
-    get_questions_by_category,
+use log::LevelFilter;
+use crate::{
+    routes::{
+        get_all_questions,
+        get_random_questions,
+        get_questions_by_type,
+        get_filtered_questions,
+        get_questions_by_category,
+    },
+    utils::logging_utils::{ log_error, log_info },
 };
 
 mod utils;
@@ -29,14 +32,17 @@ async fn main() -> std::io::Result<()> {
             .service(get_filtered_questions)
             .service(get_questions_by_type)
             .service(get_questions_by_category)
+            .configure(|cfg| {
+                RateLimiter::new().per_second(1).service(cfg);
+            })
     }).bind("127.0.0.1:8081")?;
     let result = server.run().await;
 
     if let Err(e) = result {
-        error!("Error: {}", e);
+        log_error(&e.to_string());
     }
 
-    info!("Server stopped");
+    log_info("Server stopped");
 
     Ok(())
 }
