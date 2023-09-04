@@ -32,9 +32,9 @@ async fn main() -> std::io::Result<()> {
             .service(get_filtered_questions)
             .service(get_questions_by_type)
             .service(get_questions_by_category)
-            .configure(|cfg| {
-                RateLimiter::new().per_second(1).service(cfg);
-            })
+            // .configure(|cfg| {
+            //     RateLimiter::new().per_second(1).service(cfg);
+            // })
     }).bind("127.0.0.1:8081")?;
     let result = server.run().await;
 
