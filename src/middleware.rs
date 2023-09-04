@@ -1,81 +1,50 @@
-use actix_service::Service;
-use actix_web::dev::{ServiceRequest, ServiceResponse, Transform};
-use actix_web::error::Error;
-use futures::future::{ok, Ready};
-use log::info;
-use std::pin::Pin;
-use std::task::{Context, Poll};
-use std::time::Instant;
+// use actix_service::Service;
+// use actix_web::{ dev::{ ServiceRequest, ServiceResponse }, body::BoxBody };
+// use std::time::Instant;
+// use log::info;
 
-pub struct LogMiddleware;
+// pub async fn log_middleware<S>(
+//     req: ServiceRequest,
+//     srv: &S
+// ) -> Result<ServiceResponse<BoxBody>, actix_web::Error>
+//     where S: Service<ServiceRequest, Response = ServiceResponse<BoxBody>, Error = actix_web::Error>
+// {
+//     let start = Instant::now();
+//     let path = req.path().to_owned();
+//     let client_ip = req.peer_addr().unwrap();
 
-impl<S: 'static, Req, B> Transform<S, ServiceRequest> for LogMiddleware
-    where
-        S: Service<Req, Response=ServiceResponse, Error=Error>,
-{
-    type Response = ServiceResponse;
-    type Error = Error;
-    type Transform = LogMiddlewareMiddleware<S, B, Req>;
-    type InitError = ();
-    type Future = Ready<Result<Self::Transform, Self::InitError>>;
+//     // Log incoming request
+//     info!("Received request from {} {} {}", client_ip, req.method(), path);
 
-    fn new_transform(&self, service: S) -> Self::Future {
-        ok(LogMiddlewareMiddleware { service })
-    }
-}
+//     let res = srv.call(req).await?;
 
-pub struct LogMiddlewareMiddleware<S, B, Req: Send + Sync + 'static> {
-    service: S,
-}
+//     // Log response
+//     let elapsed = start.elapsed().as_micros();
+//     info!("Responded with {} in {}μs", res.status(), elapsed);
 
-impl<S, B, Req> Service<ServiceRequest> for LogMiddlewareMiddleware<S, B, Req>
-    where
-        S: Service<Req, Response=ServiceResponse<B>, Error=Error>,
-{
-    type Response = ServiceResponse<B>;
-    type Error = Error;
-    type Future = Pin<Box<dyn futures::Future<Output=Result<Self::Response, Self::Error>>>>;
+//     Ok(res)
+// }
 
-    fn poll_ready(&mut self, cx: &mut Context<'_>) -> Poll<Result<(), Self::Error>> {
-        self.service.poll_ready(cx)
-    }
+// pub async fn error_middleware<S>(
+//     req: ServiceRequest,
+//     srv: &S,
+//     err: actix_web::Error
+// ) -> Result<ServiceResponse<BoxBody>, actix_web::Error>
+//     where S: Service<ServiceRequest, Response = ServiceResponse<BoxBody>, Error = actix_web::Error>
+// {
+//     info!("Error: {}", err);
 
-    fn call(&mut self, req: ServiceRequest) -> Self::Future {
-        let start = Instant::now();
-        let path = req.path().to_owned();
-        let remote_addr = req
-            .connection_info()
-            .remote()
-            .map(|ip| ip.to_string())
-            .unwrap_or_else(|| "unknown".to_string());
+//     srv.call(req).await
+// }
 
-        // Log incoming request with IP address and timestamp
-        info!(
-            "[{}] Received request from {} - {} {}",
-            chrono::Local::now(),
-            remote_addr,
-            req.method(),
-            path
-        );
+// pub fn response_middleware<S>(
+//     req: ServiceRequest,
+//     srv: &S,
+//     res: ServiceResponse<BoxBody>
+// ) -> Result<ServiceResponse<BoxBody>, actix_web::Error>
+//     where S: Service<ServiceRequest, Response = ServiceResponse<BoxBody>, Error = actix_web::Error>
+// {
+//     info!("Response: {}", res.status());
 
-        let fut = self.service.call(req);
-
-        let path_clone = path.clone();
-        Box::pin(async move {
-            let res = fut.await?;
-
-            let elapsed = start.elapsed().as_micros();
-            // Log response with IP address, status code, and elapsed time
-            info!(
-                "[{}] Responded with {} in {}μs from {} - {}",
-                chrono::Local::now(),
-                res.status(),
-                elapsed,
-                remote_addr,
-                path_clone
-            );
-
-            Ok(res)
-        })
-    }
-}
+//     Ok(res)
+// }
