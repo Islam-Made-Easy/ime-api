@@ -1,7 +1,10 @@
 use rand::Rng;
 use log::{ info, error };
 use actix_web::{ get, HttpResponse, web, Responder };
-use crate::{ models::{ QueryParams, QuizQuestion, PathParams }, handlers::read_quiz_data };
+use crate::{
+    models::{ QueryParams, QuizQuestion, PathParams },
+    handlers::question_handler::read_quiz_data,
+};
 
 #[get("/api/questions")]
 pub(crate) async fn get_all_questions(qp: web::Query<QueryParams>) -> impl Responder {
