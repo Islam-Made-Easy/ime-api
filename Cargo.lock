@@ -505,6 +505,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "clocksource"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b90cc4cec392a6d97223f008b5da7a3c2c71aa6d5ffdf0e3e14d8b2432738387"
+dependencies = [
+ "lazy_static",
+ "libc",
+ "mach",
+ "time 0.3.25",
+ "winapi 0.3.9",
+]
+
+[[package]]
 name = "cloudabi"
 version = "0.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1116,8 +1129,9 @@ dependencies = [
  "r2d2",
  "r2d2_redis",
  "rand 0.8.5",
+ "ratelimit",
  "ratelimit_meter",
- "redis 0.23.2",
+ "redis 0.23.3",
  "reqwest",
  "serde",
  "serde_json",
@@ -1302,6 +1316,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "31e24f1ad8321ca0e8a1e0ac13f23cb668e6f5466c2c57319f6a5cf1cc8e3b1c"
 dependencies = [
  "linked-hash-map",
+]
+
+[[package]]
+name = "mach"
+version = "0.3.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b823e83b2affd8f40a9ee8c29dbc56404c1e34cd2710921f2801e2cf29527afa"
+dependencies = [
+ "libc",
 ]
 
 [[package]]
@@ -1784,6 +1807,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "ratelimit"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1ab80ec32e625af41cd6ffc39fe4dd943e6f71b437d2e29df65ad2426d1268ef"
+dependencies = [
+ "clocksource",
+ "parking_lot 0.12.1",
+ "thiserror",
+]
+
+[[package]]
 name = "ratelimit_meter"
 version = "5.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1811,9 +1845,9 @@ dependencies = [
 
 [[package]]
 name = "redis"
-version = "0.23.2"
+version = "0.23.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ffd6543a7bc6428396845f6854ccf3d1ae8823816592e2cbe74f20f50f209d02"
+checksum = "4f49cdc0bb3f412bf8e7d1bd90fe1d9eb10bc5c399ba90973c14662a27b3f8ba"
 dependencies = [
  "combine",
  "itoa 1.0.9",

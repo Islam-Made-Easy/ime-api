@@ -1,6 +1,8 @@
-use actix_web::{ HttpServer, App, middleware::Logger };
+use std::time::Duration;
+use actix_web::{HttpServer, App, middleware::Logger};
 use env_logger::Builder;
 use log::LevelFilter;
+use ratelimit::Ratelimiter;
 use crate::{
     routes::{
         get_all_questions,
@@ -9,7 +11,7 @@ use crate::{
         get_filtered_questions,
         get_questions_by_category,
     },
-    utils::logging_utils::{ log_error, log_info },
+    utils::logging_utils::{log_error, log_info},
 };
 
 mod utils;
@@ -32,9 +34,9 @@ async fn main() -> std::io::Result<()> {
             .service(get_filtered_questions)
             .service(get_questions_by_type)
             .service(get_questions_by_category)
-            // .configure(|cfg| {
-            //     RateLimiter::new().per_second(1).service(cfg);
-            // })
+            .configure(|_cfg| {
+                Ratelimiter::builder(1, Duration::from_secs(1)).build().unwrap();
+            })
     }).bind("127.0.0.1:8081")?;
     let result = server.run().await;
 
