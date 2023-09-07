@@ -19,7 +19,11 @@ impl QuestionData {
                     for subcategory in subcategories.values() {
                         if let Some(questions_array) = subcategory.as_array() {
                             for question in questions_array {
-                                if let Ok(quiz_question) = serde_json::from_value::<QuizQuestion>(question.clone()) {
+                                if
+                                let Ok(quiz_question) = serde_json::from_value::<QuizQuestion>(
+                                    question.clone()
+                                )
+                                {
                                     questions.push(quiz_question);
                                 }
                             }
