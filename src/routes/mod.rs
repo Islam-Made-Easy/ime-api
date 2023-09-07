@@ -1,3 +1,5 @@
+mod question_data;
+
 use rand::Rng;
 use log::{info, error};
 use actix_web::{get, HttpResponse, web, Responder};
@@ -5,6 +7,7 @@ use crate::{
     models::{QueryParams, QuizQuestion, PathParams},
     handlers::question_handler::read_quiz_data,
 };
+use crate::routes::question_data::QuestionData;
 
 #[get("/api/questions")]
 pub(crate) async fn get_all_questions(qp: web::Query<QueryParams>) -> impl Responder {
@@ -22,36 +25,22 @@ pub(crate) async fn get_all_questions(qp: web::Query<QueryParams>) -> impl Respo
     let page = qp.page.unwrap_or(1);
     let items_per_page = qp.items_per_page.unwrap_or(100); // Default to 100 items per page
 
-    let mut questions = Vec::new();
-
-    if let Some(categories) = json_data.get("categories").and_then(|c| c.as_object()) {
-        for category in categories.values() {
-            if let Some(subcategories) = category.as_object() {
-                for subcategory in subcategories.values() {
-                    if let Some(questions_array) = subcategory.as_array() {
-                        for question in questions_array {
-                            if
-                            let Ok(quiz_question) = serde_json::from_value::<QuizQuestion>(
-                                question.clone()
-                            )
-                            {
-                                questions.push(quiz_question);
-                            }
-                        }
-                    }
-                }
-            }
+    let data = match QuestionData::new(&json_data) {
+        Ok(data) => data,
+        Err(err) => {
+            error!("Error initializing QuestionData: {}", err);
+            return HttpResponse::InternalServerError().finish();
         }
-    }
+    };
 
-    info!("Number of Questions: {}", questions.len());
+    info!("Number of Questions: {}", data.questions.len());
 
     // Perform pagination
     let start_index = (page - 1) * items_per_page;
     let end_index = start_index + items_per_page;
 
-    let paginated_questions = if start_index < questions.len() {
-        questions[start_index..std::cmp::min(end_index, questions.len())].to_vec()
+    let paginated_questions = if start_index < data.questions.len() {
+        data.questions[start_index..std::cmp::min(end_index, data.questions.len())].to_vec()
     } else {
         Vec::new()
     };
@@ -133,7 +122,7 @@ pub(crate) async fn get_questions_by_category(
     }
 }
 
-#[get("/api/questions/by-type")]
+#[get("/api/questions/type")]
 pub(crate) async fn get_questions_by_type(
     qp: web::Query<QueryParams>,
     web::Query(query_params): web::Query<QueryParams>,
@@ -153,39 +142,23 @@ pub(crate) async fn get_questions_by_type(
     // Return all questions of the desired type
     let limit = qp.limit.unwrap_or(usize::MAX); // Default to no limit
 
-    let mut questions = Vec::new();
-
-    if let Some(categories) = json_data.get("categories").and_then(|c| c.as_object()) {
-        for category in categories.values() {
-            if let Some(subcategories) = category.as_object() {
-                for subcategory in subcategories.values() {
-                    if let Some(questions_array) = subcategory.as_array() {
-                        for question in questions_array {
-                            if
-                            let Ok(quiz_question) = serde_json::from_value::<QuizQuestion>(
-                                question.clone()
-                            )
-                            {
-                                if quiz_question.question_type == desired_question_type {
-                                    questions.push(quiz_question);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+    let data: QuestionData = match QuestionData::new(&json_data) {
+        Ok(data) => data,
+        Err(err) => {
+            error!("Error initializing QuestionData: {}", err);
+            return HttpResponse::InternalServerError().finish();
         }
-    }
+    };
 
-    info!("Number of Questions of Type '{}': {}", desired_question_type, questions.len());
+    info!("Number of Questions of Type '{}': {}", desired_question_type, data.questions.len());
 
     // Return the limited questions
-    if questions.len() > limit {
+    if data.questions.len() > limit {
         HttpResponse::Ok()
             .append_header(("Content-Type", "application/json"))
-            .json(&questions[..limit])
+            .json(&data.questions[..limit])
     } else {
-        HttpResponse::Ok().append_header(("Content-Type", "application/json")).json(&questions)
+        HttpResponse::Ok().append_header(("Content-Type", "application/json")).json(&data.questions)
     }
 }
 
@@ -230,7 +203,7 @@ pub(crate) async fn get_filtered_questions(
                 }
             }
         }
-    }
+    };
 
     info!("Number of Filtered Questions: {}", filtered_questions.len());
 
@@ -260,35 +233,21 @@ pub(crate) async fn get_random_questions(qp: web::Query<QueryParams>) -> impl Re
     // Get query parameters
     let limit = qp.limit.unwrap_or(usize::MAX); // Default to no limit
 
-    let mut all_questions = Vec::new();
-
-    if let Some(categories) = json_data.get("categories").and_then(|c| c.as_object()) {
-        for category in categories.values() {
-            if let Some(subcategories) = category.as_object() {
-                for subcategory in subcategories.values() {
-                    if let Some(questions_array) = subcategory.as_array() {
-                        for question in questions_array {
-                            if
-                            let Ok(quiz_question) = serde_json::from_value::<QuizQuestion>(
-                                question.clone()
-                            )
-                            {
-                                all_questions.push(quiz_question);
-                            }
-                        }
-                    }
-                }
-            }
+    let mut data: QuestionData = match QuestionData::new(&json_data) {
+        Ok(data) => data,
+        Err(err) => {
+            error!("Error initializing QuestionData: {}", err);
+            return HttpResponse::InternalServerError().finish();
         }
-    }
+    };
 
     let mut rng = rand::thread_rng();
     let mut random_questions = Vec::new();
 
     // Randomly select questions
-    while !all_questions.is_empty() && random_questions.len() < limit {
-        let random_index = rng.gen_range(0..all_questions.len());
-        random_questions.push(all_questions.remove(random_index));
+    while !data.questions.is_empty() && random_questions.len() < limit {
+        let random_index = rng.gen_range(0..data.questions.len());
+        random_questions.push(data.questions.remove(random_index));
     }
 
     info!("Number of Random Questions: {}", random_questions.len());
