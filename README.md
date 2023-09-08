@@ -61,9 +61,9 @@ To use the IME-API, make HTTP requests to the provided endpoints. You can use to
 
 You can run tests for the API using the following command:
 
-   ```console
+  ```console
     cargo test
-    ```
+```
 
 ## Getting involved
 
