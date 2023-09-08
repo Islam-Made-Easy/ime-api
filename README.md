@@ -39,7 +39,7 @@ Follow these instructions to get the IME-API up and running on your local machin
 ### Installation
 
 1. Clone the repository:
-   `shell`
+
    git clone https://github.com/Islam-Made-Easy/ime-api.git
    cd ime-api
 
