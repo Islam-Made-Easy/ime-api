@@ -40,8 +40,10 @@ Follow these instructions to get the IME-API up and running on your local machin
 
 1. Clone the repository:
 
+   ```console
    git clone https://github.com/Islam-Made-Easy/ime-api.git
    cd ime-api
+   ```
 
 ## Usage
 
