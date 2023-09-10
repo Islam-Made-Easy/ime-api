@@ -34,7 +34,7 @@ Follow these instructions to get the IME-API up and running on your local machin
 
 - Rust programming language installed.
 - Cargo package manager installed.
-- JSON data file with quiz questions.
+- JSON data(assets) file with quiz questions.
 
 ### Installation
 
