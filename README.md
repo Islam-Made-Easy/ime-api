@@ -61,14 +61,14 @@ To use the IME-API, make HTTP requests to the provided endpoints. You can use to
 
 You can run tests for the API using the following command:
 
-  ```console
-    cargo test
+```console
+  cargo test
 ```
 
 ## Getting involved
 
 We welcome and encourage you to report issues and contribute changes.
 
-- [Contribution guide for developers](https://github.com/Islam-Made-Easy/developer-center/wiki)
+- [Contribution guide for developers](https://github.com/Islam-Made-Easy/ime-api/wiki)
 
 [![Open in Gitpod!](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Islam-Made-Easy/ime-api)
