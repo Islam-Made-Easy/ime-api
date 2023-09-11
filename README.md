@@ -57,6 +57,8 @@ To use the IME-API, make HTTP requests to the provided endpoints. You can use to
     GET /api/questions/filter: Filter questions based on custom criteria.
     GET /api/questions/random: Get random questions.
 
+For detailed information on each endpoint and their request/response formats, refer to the [API Documentation](https://github.com/Islam-Made-Easy/ime-api/wiki/API-Documentation).
+
 ## Testing
 
 You can run tests for the API using the following command:
