@@ -10,7 +10,7 @@
           ],
           "correct_answer": "unification. -- Tawheed",
           "id": 1,
-          "month": null,
+          "month": "null",
           "question": "What is the greatest worship?",
           "question_type": "multiple-choice"
         },
@@ -24,7 +24,7 @@
             "a stubborn hypocrite"
           ],
           "correct_answer": "K.F.R because he committed a nullifier of Islam",
-          "month": null
+          "month": "null"
         }
       ],
       "Names of Allah": [
@@ -39,7 +39,7 @@
             "Taqwah"
           ],
           "correct_answer": "charity",
-          "month": null
+          "month": "null"
         },
         {
           "id": 12,
@@ -51,7 +51,7 @@
             "اوروبا"
           ],
           "correct_answer": "الشام",
-          "month": null
+          "month": "null"
         }
       ]
     },
@@ -68,7 +68,7 @@
             "Muhammad, peace and blessings be upon him"
           ],
           "correct_answer": "Moses, peace be upon him",
-          "month": null
+          "month": "null"
         },
         {
           "id": 22,
@@ -81,7 +81,7 @@
             "the earthquake"
           ],
           "correct_answer": "sincerity",
-          "month": null
+          "month": "null"
         }
       ],
       "Books of Allah": [
@@ -96,7 +96,7 @@
             "Surat Al-Shuara"
           ],
           "correct_answer": "Surat Al-Naml",
-          "month": null
+          "month": "null"
         },
         {
           "id": 32,
@@ -109,7 +109,7 @@
             "poets"
           ],
           "correct_answer": "Surat Al-Naml",
-          "month": null
+          "month": "null"
         }
       ]
     }
