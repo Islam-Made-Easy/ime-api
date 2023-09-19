@@ -32,7 +32,8 @@ Follow these instructions to get the IME-API up and running on your local machin
 
 ### Prerequisites
 
-- Rust programming language installed.
+- Install Rust by going to the [Rust](https://www.rust-lang.org/tools/install) page and following the instructions.
+|  This installs a tool called "rustup", which lets you manage multiple versions of Rust. By default, it installs the latest stable Rust release, which you can use for general Rust development. Rustup installs `rustc`, the Rust compiler, as well as `cargo`, Rust's package manager, `rust-std`, Rust's standard libraries, and some helpful docs — `rust-docs`.
 - Cargo package manager installed.
 - JSON data(assets) file with quiz questions.
 
@@ -68,7 +69,7 @@ You can run tests for the API using the following command:
 
 ## Getting involved
 
-We welcome and encourage you to report issues and contribute changes.
+We welcome and encourage you to report issues and contribute to changes.
 
 - [Contribution guide for developers](https://github.com/Islam-Made-Easy/ime-api/wiki)
 
