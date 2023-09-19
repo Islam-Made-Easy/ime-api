@@ -1,4 +1,4 @@
-use actix_web::{ HttpServer, App, middleware::Logger };
+use actix_web::{HttpServer, App, middleware::Logger};
 use env_logger::Builder;
 use log::LevelFilter;
 use crate::{
@@ -10,7 +10,7 @@ use crate::{
         get_questions_by_month,
         get_questions_by_category,
     },
-    utils::logging_utils::{ log_error, log_info },
+    utils::logging_utils::{log_error, log_info},
 };
 
 mod utils;
