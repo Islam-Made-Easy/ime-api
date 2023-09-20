@@ -7,17 +7,18 @@ The API is built using the [Actix Web](https://actix.rs/) framework in Rust.
 - [Introduction](#introduction)
 - [Features](#features)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
-- [Configuration](#configuration)
 - [Testing](#testing)
 - [Contributing](#getting-involved)
 
 ## Introduction
 
-The IME-API is designed to provide a wide range of quiz questions for various purposes, such as educational apps, trivia games, and more. It offers a simple and efficient way to access a vast collection of questions.
+The IME-API is designed to provide a wide range of quiz questions for various purposes, such as
+educational apps, trivia games, and more. It offers a simple and efficient way to access a vast
+collection of questions.
 
 ## Features
 
@@ -47,7 +48,8 @@ Follow these instructions to get the IME-API up and running on your local machin
 
 ## Usage
 
-To use the IME-API, make HTTP requests to the provided endpoints. You can use tools like curl or Postman, or integrate it into your application.
+To use the IME-API, make HTTP requests to the provided endpoints. You can use tools like curl or
+Postman, or integrate it into your application.
 
 ## API Endpoints
 
@@ -56,7 +58,8 @@ To use the IME-API, make HTTP requests to the provided endpoints. You can use to
     GET /api/questions/type: Filter questions by type.
     GET /api/questions/random: Get random questions.
 
-For detailed information on each endpoint and their request/response formats, refer to the [API Documentation](https://github.com/Islam-Made-Easy/ime-api/wiki/API-Documentation).
+For detailed information on each endpoint and their request/response formats, refer to
+the [API Documentation](https://github.com/Islam-Made-Easy/ime-api/wiki/API-Documentation).
 
 ## Testing
 
