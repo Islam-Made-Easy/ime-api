@@ -1,7 +1,7 @@
 #[actix_rt::test]
 async fn test_get_all_questions() {
     use actix_rt::System;
-    use actix_web::{ test, App };
+    use actix_web::{test, App};
 
     use crate::routes::get_all_questions;
     System::new().block_on(async {
@@ -20,27 +20,26 @@ async fn test_get_all_questions() {
 [
     {
         "id": 1,
-        "question": "Who was the first President of the United States?",
+        "question": "What is the greatest worship?",
         "question_type": "multiple-choice",
         "answers": [
-            "George Washington",
-            "Abraham Lincoln",
-            "Thomas Jefferson",
-            "John Adams"
+            "The prayer",
+            "Zakat",
+            "Unification. -- Tawheed"
         ],
-        "correct_answer": "George Washington"
+        "correct_answer": "Unification. -- Tawheed"
     },
     {
         "id": 2,
-        "question": "What is the capital of France?",
+        "question": "Fasting is one of the pillars",
         "question_type": "multiple-choice",
         "answers": [
-            "Berlin",
-            "London",
-            "Madrid",
-            "Paris"
+            "Islam",
+            "Faith",
+            "Charity",
+            "Taqwah"
         ],
-        "correct_answer": "Paris"
+        "correct_answer": "Islam"
     }
 ]
 "#;
