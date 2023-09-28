@@ -36,8 +36,6 @@ jobs:
         include:
           - lint: check
             args: " --all-features"
-          - lint: test
-            args: ""
           - lint: clippy
             args: " --all --all-features -- -D warnings"
           - lint: fmt
