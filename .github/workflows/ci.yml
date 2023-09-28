@@ -1,0 +1,62 @@
+name: IME API Rust CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build
+      run: cargo build --verbose
+  lint:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+        lint: [check, test, clippy, fmt]
+        exclude: # https://github.com/community/community/discussions/7835
+          - os: windows-latest
+            lint: clippy
+          - os: windows-latest
+            lint: fmt
+          - os: macOS-latest
+            lint: clippy
+          - os: macOS-latest
+            lint: fmt
+        include:
+          - lint: check
+            args: " --all-features"
+          - lint: test
+            args: ""
+          - lint: clippy
+            args: " --all --all-features -- -D warnings"
+          - lint: fmt
+            args: " --all -- --check"
+    steps:
+      - uses: actions/checkout@v3
+      - uses: rui314/setup-mold@v1 # faster linker
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target
+          key: ${{ runner.os }}-${{ matrix.lint }}-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.OS }}-${{ matrix.lint }}-
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy,rustfmt
+      - run: cargo ${{ matrix.lint }}${{ matrix.args }}
+    
