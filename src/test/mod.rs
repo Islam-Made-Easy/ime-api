@@ -15,8 +15,7 @@ async fn test_get_all_questions() {
         let body = test::read_body(resp).await;
         let body_str = String::from_utf8(body.to_vec()).unwrap();
 
-        let expected_response_content =
-            r#"
+        let expected_response_content = r#"
 [
     {
         "id": 1,

@@ -1,24 +1,21 @@
-use actix_web::{HttpServer, App, middleware::Logger};
-use env_logger::Builder;
-use log::LevelFilter;
 use crate::{
     routes::{
-        get_all_questions,
-        get_random_questions,
-        get_questions_by_type,
-        get_filtered_questions,
-        get_questions_by_month,
-        get_questions_by_category,
+        get_all_questions, get_filtered_questions, get_questions_by_category,
+        get_questions_by_month, get_questions_by_type, get_random_questions,
     },
     utils::logging_utils::{log_error, log_info},
 };
 
-mod utils;
-mod routes;
-mod models;
+use actix_web::{middleware::Logger, App, HttpServer};
+use env_logger::Builder;
+use log::LevelFilter;
+
 mod handlers;
 mod middleware;
+mod models;
+mod routes;
 mod test;
+mod utils;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -34,7 +31,8 @@ async fn main() -> std::io::Result<()> {
             .service(get_questions_by_type)
             .service(get_questions_by_category)
             .service(get_questions_by_month)
-    }).bind("127.0.0.1:8081")?;
+    })
+    .bind("127.0.0.1:8081")?;
     let result = server.run().await;
 
     if let Err(e) = result {

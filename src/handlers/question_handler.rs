@@ -1,6 +1,6 @@
-use std::io::Read;
-use std::fs::File;
 use serde_json::Value;
+use std::fs::File;
+use std::io::Read;
 
 pub fn read_quiz_data() -> Result<Value, Box<dyn std::error::Error>> {
     // Read the JSON file

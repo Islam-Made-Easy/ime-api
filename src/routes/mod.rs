@@ -1,13 +1,13 @@
 mod question_data;
 
-use rand::Rng;
-use log::{ info, error };
-use actix_web::{ get, HttpResponse, web, Responder };
-use crate::{
-    models::{ QueryParams, QuizQuestion, PathParams },
-    handlers::question_handler::read_quiz_data,
-};
 use crate::routes::question_data::QuestionData;
+use crate::{
+    handlers::question_handler::read_quiz_data,
+    models::{PathParams, QueryParams, QuizQuestion},
+};
+use actix_web::{get, web, HttpResponse, Responder};
+use log::{error, info};
+use rand::Rng;
 
 #[get("/api/questions")]
 pub(crate) async fn get_all_questions(qp: web::Query<QueryParams>) -> impl Responder {
@@ -60,7 +60,7 @@ pub(crate) async fn get_all_questions(qp: web::Query<QueryParams>) -> impl Respo
 #[get("/api/questions/{category}/{subcategory}")]
 pub(crate) async fn get_questions_by_category(
     path_params: web::Path<PathParams>,
-    qp: web::Query<QueryParams>
+    qp: web::Query<QueryParams>,
 ) -> impl Responder {
     // Read the data from the JSON file
     let json_data = match read_quiz_data() {
@@ -79,17 +79,14 @@ pub(crate) async fn get_questions_by_category(
     let mut questions = Vec::new();
 
     if let Some(categories) = json_data.get("categories").and_then(|c| c.as_object()) {
-        if
-            let Some(subcategories) = categories
-                .get(&path_params.category)
-                .and_then(|s| s.get(&path_params.subcategory))
+        if let Some(subcategories) = categories
+            .get(&path_params.category)
+            .and_then(|s| s.get(&path_params.subcategory))
         {
             if let Some(questions_array) = subcategories.as_array() {
                 for question in questions_array {
-                    if
-                        let Ok(quiz_question) = serde_json::from_value::<QuizQuestion>(
-                            question.clone()
-                        )
+                    if let Ok(quiz_question) =
+                        serde_json::from_value::<QuizQuestion>(question.clone())
                     {
                         questions.push(quiz_question);
                     }
@@ -125,7 +122,7 @@ pub(crate) async fn get_questions_by_category(
 #[get("/api/questions/type")]
 pub(crate) async fn get_questions_by_type(
     qp: web::Query<QueryParams>,
-    web::Query(query_params): web::Query<QueryParams>
+    web::Query(query_params): web::Query<QueryParams>,
 ) -> impl Responder {
     // Read the data from the JSON file
     let json_data = match read_quiz_data() {
@@ -150,7 +147,11 @@ pub(crate) async fn get_questions_by_type(
         }
     };
 
-    info!("Number of Questions of Type '{}': {}", desired_question_type, data.questions.len());
+    info!(
+        "Number of Questions of Type '{}': {}",
+        desired_question_type,
+        data.questions.len()
+    );
 
     // Return the limited questions
     if data.questions.len() > limit {
@@ -158,14 +159,16 @@ pub(crate) async fn get_questions_by_type(
             .append_header(("Content-Type", "application/json"))
             .json(&data.questions[..limit])
     } else {
-        HttpResponse::Ok().append_header(("Content-Type", "application/json")).json(&data.questions)
+        HttpResponse::Ok()
+            .append_header(("Content-Type", "application/json"))
+            .json(&data.questions)
     }
 }
 
 #[get("/api/questions/filter")]
 pub(crate) async fn get_filtered_questions(
     qp: web::Query<QueryParams>,
-    web::Query(query_params): web::Query<QueryParams>
+    web::Query(query_params): web::Query<QueryParams>,
 ) -> impl Responder {
     // Read the data from the JSON file
     let json_data = match read_quiz_data() {
@@ -188,10 +191,8 @@ pub(crate) async fn get_filtered_questions(
                 for subcategory in subcategories.values() {
                     if let Some(questions_array) = subcategory.as_array() {
                         for question in questions_array {
-                            if
-                                let Ok(quiz_question) = serde_json::from_value::<QuizQuestion>(
-                                    question.clone()
-                                )
+                            if let Ok(quiz_question) =
+                                serde_json::from_value::<QuizQuestion>(question.clone())
                             {
                                 // Filter based on query parameters
                                 if quiz_question.question_type == desired_question_type {
@@ -253,7 +254,9 @@ pub(crate) async fn get_random_questions(qp: web::Query<QueryParams>) -> impl Re
     info!("Number of Random Questions: {}", random_questions.len());
 
     // Return the random questions
-    HttpResponse::Ok().append_header(("Content-Type", "application/json")).json(&random_questions)
+    HttpResponse::Ok()
+        .append_header(("Content-Type", "application/json"))
+        .json(&random_questions)
 }
 
 #[get("/api/questions/month")]
@@ -281,10 +284,8 @@ pub(crate) async fn get_questions_by_month(qp: web::Query<QueryParams>) -> impl 
                 for subcategory in subcategories.values() {
                     if let Some(questions_array) = subcategory.as_array() {
                         for question in questions_array {
-                            if
-                                let Ok(quiz_question) = serde_json::from_value::<QuizQuestion>(
-                                    question.clone()
-                                )
+                            if let Ok(quiz_question) =
+                                serde_json::from_value::<QuizQuestion>(question.clone())
                             {
                                 // Check if the event month matches the filter
                                 if let Some(ref month) = month_filter {

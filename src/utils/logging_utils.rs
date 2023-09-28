@@ -1,4 +1,4 @@
-use log::{ info, error };
+use log::{error, info};
 
 pub fn log_info(message: &str) {
     info!("{}", message);
