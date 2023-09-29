@@ -3,7 +3,11 @@
     "Worship": {
       "Tawheed and Shirk": [
         {
-          "answers": ["the prayer", "Zakat", "unification. -- Tawheed"],
+          "answers": [
+            "the prayer",
+            "Zakat",
+            "unification. -- Tawheed"
+          ],
           "correct_answer": "unification. -- Tawheed",
           "id": 1,
           "month": "null",
@@ -28,7 +32,12 @@
           "id": 11,
           "question": "Fasting is one of the pillars",
           "question_type": "fill-in-the-blanks",
-          "answers": ["Islam", "Faith", "charity", "Taqwah"],
+          "answers": [
+            "Islam",
+            "Faith",
+            "charity",
+            "Taqwah"
+          ],
           "correct_answer": "Islam",
           "month": "null"
         },
@@ -36,7 +45,11 @@
           "id": 12,
           "question": "ما هي الارض المباركة",
           "question_type": "multiple-choice",
-          "answers": ["الشام", "افريقيا", "اوروبا"],
+          "answers": [
+            "الشام",
+            "افريقيا",
+            "اوروبا"
+          ],
           "correct_answer": "الشام",
           "month": "null"
         }
@@ -45,7 +58,7 @@
     "The Qur'an": {
       "Prophets & Messengers": [
         {
-          "id": 21,
+          "id": 0,
           "question": "Who is the prophet who is mentioned the most in the Qur'an?",
           "question_type": "fill-in-the-blanks",
           "answers": [
@@ -58,7 +71,7 @@
           "month": "null"
         },
         {
-          "id": 22,
+          "id": 1,
           "question": "What is the name of the surah that you read equals one-third of the Qur’an?",
           "question_type": "fill-in-the-blanks",
           "answers": [
@@ -68,6 +81,19 @@
             "the earthquake"
           ],
           "correct_answer": "sincerity",
+          "month": "null"
+        },
+        {
+          "id": 3,
+          "question": "who is the prophet who was given Taurat?",
+          "question_type": "multiple-choice",
+          "answers": [
+            "Muhammad, peace and blessings be upon him",
+            "Jesus, peace be upon him",
+            "Moses, peace be upon him",
+            "Abraham, peace be upon him"
+          ],
+          "correct_answer": "Moses, peace be upon him",
           "month": "null"
         }
       ],
@@ -89,7 +115,12 @@
           "id": 32,
           "question": "In which surah is the story of Taloot and Goliath mentioned?",
           "question_type": "multiple-choice",
-          "answers": ["the norms", "the table", "the cow", "poets"],
+          "answers": [
+            "the norms",
+            "the table",
+            "the cow",
+            "poets"
+          ],
           "correct_answer": "Surat Al-Naml",
           "month": "null"
         }
