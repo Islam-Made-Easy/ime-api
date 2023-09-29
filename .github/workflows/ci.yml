@@ -22,7 +22,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest, macOS-latest]
         lint: [check, clippy, fmt]
         exclude: # https://github.com/community/community/discussions/7835
           - os: macOS-latest
