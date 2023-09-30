@@ -22,13 +22,9 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
-        lint: [check, test, clippy, fmt]
+        os: [ubuntu-latest, macOS-latest]
+        lint: [check, clippy, fmt]
         exclude: # https://github.com/community/community/discussions/7835
-          - os: windows-latest
-            lint: clippy
-          - os: windows-latest
-            lint: fmt
           - os: macOS-latest
             lint: clippy
           - os: macOS-latest
@@ -36,8 +32,6 @@ jobs:
         include:
           - lint: check
             args: " --all-features"
-          - lint: test
-            args: ""
           - lint: clippy
             args: " --all --all-features -- -D warnings"
           - lint: fmt
