@@ -5,6 +5,9 @@ pub struct QuestionData {
     pub questions: Vec<QuizQuestion>,
 }
 
+/// `QuestionData` struct contains a vector of `QuizQuestion` structs.
+/// It has a `new` function that takes a JSON value and returns a `Result` containing a `QuestionData` struct or an `actix_web::Error`.
+/// It also has an `extract_questions` function that takes a JSON value and returns a `Result` containing a vector of `QuizQuestion` structs or an `actix_web::Error`.
 impl QuestionData {
     pub fn new(json_data: &Value) -> Result<Self, actix_web::Error> {
         let questions = Self::extract_questions(json_data)?;
